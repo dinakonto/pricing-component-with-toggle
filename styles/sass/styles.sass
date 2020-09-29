@@ -1,14 +1,15 @@
 // STYLEGUIDE
-$gradient: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%))
-
+$gradient-tb: linear-gradient(to bottom, hsl(236, 72%, 79%) , hsl(237, 63%, 64%))
+$gradient-lr: linear-gradient(to right, hsl(236, 72%, 79%) , hsl(237, 63%, 64%))
 $col-xlight: hsl(240, 78%, 98%)
 $col-light: hsl(234, 14%, 74%)
 $col-medium: hsl(233, 13%, 49%)
 $col-dark: hsl(232, 13%, 33%)
-
 $font-stack: 'Montserrat', sans-serif
 $font-weight: 700
 $font-base-size: 15px
+
+
 
 /*
  * BASE LAYOUT
@@ -16,10 +17,78 @@ $font-base-size: 15px
 *
   box-sizing: border-box
   font-family: $font-stack
-  font-weight: $font-weight
-  font-size: $font-base-size
   color: $col-medium
 body
   margin: 0
   height: 100%
   width: 100%
+  font-weight: $font-weight
+  font-size: $font-base-size
+  background: url("../../images/bg-top.svg") no-repeat, $col-xlight
+  background-position: 50vw -30px
+h2
+  font-size: 1.2em
+  margin-bottom: 20px
+button
+  background: $gradient-lr
+  width: 100%
+  border: none
+  border-radius: 6px
+  padding: 15px
+  color: white
+  font-size: 0.85em
+  text-transform: uppercase
+  letter-spacing: 1.5px
+
+.wrapper
+  text-align: center
+  padding-bottom: 40px
+header
+  padding: 40px 0 90px 0
+
+.card
+  background: white
+  margin: 24px
+  margin-bottom: 30px
+  border-radius: 10px
+  box-shadow: 0px 10px 25px rgba(109, 112, 141, 0.1)
+  padding: 20px 30px 30px 30px
+.price p
+  font-size: 4.7em
+  color: $col-dark
+  margin: 0 0 25px 0
+  display: flex
+  align-items: center
+  justify-content: center
+.price p .currency
+  font-size: 0.5em
+  color: $col-dark
+.features
+  list-style-type: none
+  padding: 0
+  margin-bottom: 40px
+.features li
+  border-top: 1px solid $col-light
+  padding: 15px
+.features li:last-of-type
+  border-bottom: 1px solid $col-light
+
+.card.highlight
+  background: $gradient-tb
+.card.highlight h2,
+.card.highlight .price p,
+.card.highlight .price p .currency,
+.card.highlight ul li
+  color: white
+.card.highlight button
+  color: $col-medium
+  background: white
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1)
+
+
+
+
+
+
+.monthly
+  display: none !important

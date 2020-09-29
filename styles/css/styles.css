@@ -3,8 +3,6 @@
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 15px;
   color: #6d708d;
 }
 
@@ -12,6 +10,95 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  font-weight: 700;
+  font-size: 15px;
+  background: url("../../images/bg-top.svg") no-repeat, #f6f6fe;
+  background-position: 50vw -30px;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 15px;
+  color: white;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.wrapper {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+header {
+  padding: 40px 0 90px 0;
+}
+
+.card {
+  background: white;
+  margin: 24px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 25px rgba(109, 112, 141, 0.1);
+  padding: 20px 30px 30px 30px;
+}
+
+.price p {
+  font-size: 4.7em;
+  color: #494c5f;
+  margin: 0 0 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price p .currency {
+  font-size: 0.5em;
+  color: #494c5f;
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.features li {
+  border-top: 1px solid #b3b5c6;
+  padding: 15px;
+}
+
+.features li:last-of-type {
+  border-bottom: 1px solid #b3b5c6;
+}
+
+.card.highlight {
+  background: linear-gradient(to bottom, #a3a8f0, #696fdd);
+}
+
+.card.highlight h2,
+.card.highlight .price p,
+.card.highlight .price p .currency,
+.card.highlight ul li {
+  color: white;
+}
+
+.card.highlight button {
+  color: #6d708d;
+  background: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.monthly {
+  display: none !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
