@@ -1,0 +1,17 @@
+/* * BASE LAYOUT
+ * */
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #6d708d;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
