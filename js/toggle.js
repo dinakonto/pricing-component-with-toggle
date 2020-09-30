@@ -1,49 +1,44 @@
-// 1. Radio selection changes price displayed (master)
-//      Move switch
-//      Change radio button selection
-//      Change prices shown
-
-
-// 2. Radio selection can be changed by:
-//      Clicking toggle switch
-//      Hitting enter on toggle switch
-//      Changing radio selection with keyboard (??)
-
-// Q. Should toggle be a radio group, checkbox, or button semantically?
-
-
-$('input[type=radio][name=billing]').change(function() {
-  changeBilling();
-});
-
+// Change if you CLICK the toggle
 $(".switch").click(function() {
-  if ($("#annually").prop("checked")) {
-    // Change to monthly
-    $("#annually").prop("checked", false);
-    $("#monthly").prop("checked", true);
-    changeBilling();
-  } else {
-    // Change to yearly
-    $("#annually").prop("checked", true);
-    $("#monthly").prop("checked", false);
-    changeBilling();
-  }
-    // $("#monthly").prop("checked", true);
-  // } else {
-    // $("#annually").prop("checked", true);
-  // }
-
+  changeVisual();
+  changeRadio();
 })
 
+// Change if you use the actual RADIO buttons
+$('input[type=radio][name=billing]').change(function() {
+  changeVisual();
+});
 
-function changeBilling() {
+// Change radio button state
+// (Included this to try and maintain accessibility of original radio group
+// but unsure how successful OR relevant it is in this case...)
+function changeRadio() {
+  if ($("#annually").prop("checked")) {
+    $("#annually").prop("checked", false);
+    $("#monthly").prop("checked", true);
+  } else {
+    $("#annually").prop("checked", true);
+    $("#monthly").prop("checked", false);
+  }
+}
+
+// Change visible prices and toggle state
+function changeVisual() {
   $(".monthly").toggleClass("hide");
   $(".annually").toggleClass("hide");
   $(".switch").toggleClass("moveit");
+}
 
-  if ( $(this).attr('value') == 'annually') {
-
-  } else if ( $(this).attr('value') == 'monthly') {
-
+// Change on keypress when toggle is focussed
+function keypress(event) {
+  if (event.keyCode == '13' || // Enter
+      event.keyCode == '32' || // Space
+      event.keyCode == '37' || // Left
+      event.keyCode == '38' || // Up
+      event.keyCode == '39' || // Right
+      event.keyCode == '40' ) { // Down
+    changeVisual();
+    changeRadio();
+    event.preventDefault();
   }
 }
