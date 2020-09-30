@@ -18,6 +18,7 @@ $font-base-size: 15px
   box-sizing: border-box
   font-family: $font-stack
   color: $col-medium
+  // transition: left 1s ease-in-out
 html
   background: $col-xlight
 body
@@ -95,6 +96,40 @@ main
 
 
 
+// TOGGLE SWITCH
+#toggle input
+  // height: 1px
+  // width: 1px
+
+#toggle .switch
+  height: 30px
+  width: 60px
+  border-radius: 100px
+  background: $gradient-lr
+  display: inline-block
+  position: relative
+#toggle .switch::after
+  position: absolute
+  content: ""
+  background: white
+  height: 22px
+  width: 22px
+  top: 4px
+  left: 4px
+  border-radius: 100px
+.moveit::after
+  left: 34px !important
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,5 +168,5 @@ main
 
 
 
-.monthly
+.hide
   display: none !important
